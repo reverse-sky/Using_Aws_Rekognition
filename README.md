@@ -337,13 +337,28 @@ function deleteAlbum(albumName) {
 ``` 
 
 >+ 다음 코드를 app.js에 입력합니다. 여기서 
-```json
+```js
 var albumBucketName = 'kwonsoon';
 var bucketRegion = 'us-east-1';
-```부분은 자신의 bucket이름과 region을 입력합니다. 
+```
+부분은 자신의 bucket이름과 region을 입력합니다. 
 
 ## 3.웹페이지에 접속해서 s3에 사진 업로드
 > + 생성한 vm의 ip로 접속하면 다음과 같은 화면을 얻을 수 있습니다.
 ![image](https://user-images.githubusercontent.com/45085563/142407419-6076abca-ce17-4ebe-b8a6-1ecc204ff14a.png)
+>+ Create New Album버튼을 클릭해봅시다. ![image](https://user-images.githubusercontent.com/45085563/142408671-11f8265d-514f-4b34-b81a-85a823934512.png)
+>+ hello Album이 생성된 것을 볼 수 있습니다. ![image](https://user-images.githubusercontent.com/45085563/142408737-8e8fb1e7-ab3c-4485-93de-43044d3e8331.png)
+>+ 파일 선택을 누르면 컴퓨터에 있는 jpg, png 파일을 업로드 할 수 있습니다. 컴퓨터뿐만 아니라 핸드폰으로도 업로드 할 수 있습니다. 
+>>![image](https://user-images.githubusercontent.com/45085563/142409594-f8666e30-7618-466d-8ec3-55b4e3dd2e7e.png) 파일 선택을 누르면 다음과 같은 팝업창이 뜨고, 사진을 선택한 다음, 
+>add Photo를 누르면 다음과 같은 화면이 뜹니다.
+>> ![image](https://user-images.githubusercontent.com/45085563/142409714-3f25ef1b-89e2-4c65-9141-e597c593d59a.png)
+>+ 이제 파일이 제대로 저장이 되었는지 확인을 해봅시다. s3 bucket으로 가면 아까 생성한 폴더가 새로 생긴것을 확인할 수 있습니다. ![image](https://user-images.githubusercontent.com/45085563/142409996-15fd8ea0-acbb-4531-8a4a-76b69874c62a.png)
+>+ 파일을 확인해보면  ![image](https://user-images.githubusercontent.com/45085563/142410125-8b136b83-0046-4943-9ef6-f7e3f90177e3.png)
+![image](https://user-images.githubusercontent.com/45085563/142410170-5c272e86-a59a-49e1-a694-e7cc3da84049.png)
+![image](https://user-images.githubusercontent.com/45085563/142410207-c33c397a-9beb-4b86-8487-5d962ac690ff.png)
+>+업로드한 파일이 s3에 저장된 것을 확인할 수 있습니다. 다음은 업로드된 사진을 Rekognition을 이용해서 labeling을 해보겠습니다.
+
+
 
 ## 4.s3와 rekognition을 연동, 사진을 labeling가능한지 확인
+>+ 
