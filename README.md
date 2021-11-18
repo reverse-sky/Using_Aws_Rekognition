@@ -356,9 +356,9 @@ var bucketRegion = 'us-east-1';
 >+ 파일을 확인해보면  ![image](https://user-images.githubusercontent.com/45085563/142410125-8b136b83-0046-4943-9ef6-f7e3f90177e3.png)
 ![image](https://user-images.githubusercontent.com/45085563/142410170-5c272e86-a59a-49e1-a694-e7cc3da84049.png)
 ![image](https://user-images.githubusercontent.com/45085563/142410207-c33c397a-9beb-4b86-8487-5d962ac690ff.png)
->+업로드한 파일이 s3에 저장된 것을 확인할 수 있습니다. 다음은 업로드된 사진을 Rekognition을 이용해서 labeling을 해보겠습니다.
+>+업로드한 파일이 s3에 저장된 것을 확인할 수 있습니다. 다음은 업로드된 사진을 Rekognition을 이용해서 labeling을 해보겠습니다. (2021-11-18기준)
 
 
 
 ## 4.s3와 rekognition을 연동, 사진을 labeling가능한지 확인
->+ 
+>+ 진행중
