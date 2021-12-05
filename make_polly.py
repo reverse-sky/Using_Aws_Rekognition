@@ -23,5 +23,4 @@ def make_polly(photo, bucket,file_name):
         file.close()
         mys3 = boto3.client('s3')
         mys3.upload_file(f'/home/ubuntu/.aws/{file_name}.mp3',bucket,f'file_name'.mp3)
-
         return f"Audio output: {file_name}"
