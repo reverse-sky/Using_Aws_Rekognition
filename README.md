@@ -21,7 +21,8 @@
 컴퓨터뿐만 아니라 핸드폰으로도 업로드 할 수 있습니다. 
 >>![image](https://user-images.githubusercontent.com/45085563/142409594-f8666e30-7618-466d-8ec3-55b4e3dd2e7e.png) 
 >text이미지를 올렸을 때, rekognition을 사용해서 file을 text로 변경한 다음, polly를 사용하여 음성 mp3파일을 생성한 다음 s3버킷에 올립니다. 
-![image](https://user-images.githubusercontent.com/45085563/144746396-766a7819-c982-4282-b8cf-874b688bb0e5.png)
+>![image](https://user-images.githubusercontent.com/45085563/144748341-3de8505b-b1ad-4a35-ae03-1ac688574389.png)
+>![image](https://user-images.githubusercontent.com/45085563/144746396-766a7819-c982-4282-b8cf-874b688bb0e5.png)
 >mp3파일이 생성된 것을 확인할 수 있습니다.
 
 # F.	개발 결과물의 필요성 및 활용방안
