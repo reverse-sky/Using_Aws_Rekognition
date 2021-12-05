@@ -361,4 +361,50 @@ var bucketRegion = 'us-east-1';
 
 
 ## 4.s3와 rekognition을 연동, 사진을 labeling가능한지 확인
->+ 진행중
+>+ python sdk boto3를 이용해서 aws를 관리하기 위해서 IAM 설정을 합니다 . ![image](https://user-images.githubusercontent.com/45085563/144743701-f9e14f3b-14aa-4e8f-8ce9-d4a4b7f47dfa.png)
+>+ IAM에서 엑세스 키 관리 버튼을 클릭합니다. ![image](https://user-images.githubusercontent.com/45085563/144743814-df294eb2-b557-4b3b-b961-32e4887fac23.png)  
+>+ 새 액세스 키 만들기 버튼을 클릭합니다. ![image](https://user-images.githubusercontent.com/45085563/144743835-a59680e7-fcea-4713-a8f0-29106bcb1a9f.png)  
+액세스 키를 생성하고 난 다음 , id와 password가 저장되어있는 csv파일을 다운 받게 됩니다. password를 잃어 버리면 다시 키를 생성해야하므로 주의합니다.  
+>+ putty로 연결한 ec2 콘솔창에 다음 aws configure를 입력합니다.( set_up을 미리 해놓길 바람)   
+>aws configure를 입력하면 다음과 같은 명령어가 뜨는데, 여기서 각각 액세스키 id, password, ec2가 있는 region, 읽을 방식(default = json)입니다.
+>![image](https://user-images.githubusercontent.com/45085563/144743944-98d83547-fd11-4726-9cf9-e825b543da11.png)  
+>이제 ec2와 aws가 연결이 되었습니다. 
+
+> console창에서 python을 실행합니다. 그리고 다음 코드를 입력합니다
+```python
+
+import os
+import boto3
+
+def make_polly(photo, bucket,file_name):
+        client=boto3.client('rekognition')
+        polly =boto3.client("polly", region_name="us-east-1")
+        response=client.detect_text(Image={'S3Object':{'Bucket':bucket,'Name':photo}})
+        textDetections=response['TextDetections']
+        print (f'Analying image[{photo}]......done:')
+        tlist = []
+        for text in textDetections:
+            if 'ParentId' not in text:        
+                tlist.append(text['DetectedText'])
+        # print ('Detected text:' + text['DetectedText'])
+        # print ('Confidence: ' + "{:.2f}".format(text['Confidence']) + "%")
+        # print ('Id: {}'.format(text['Id']))
+        sentence = ' '.join(tlist)
+        response2 =polly.synthesize_speech(Text=sentence, OutputFormat="mp3",VoiceId="Joanna")        
+        print("Sentence found: ",sentence)    
+        file_name = file_name
+        file = open(f'{file_name}.mp3','wb')
+        file.write(response2['AudioStream'].read())
+        file.close()
+        mys3 = boto3.client('s3')
+        pwd = os.getcwd()
+        mys3.upload_file(pwd+f'/{file_name}.mp3',bucket,f'{file_name}.mp3')
+        return f"Audio output: {file_name}"
+```
+>+ 매개변수로 polly로 만들 사진(여기서 폴더 이름을 지정해줘야합니다.) bucket, 저장할 파일의 이름을 받습니다. 
+>파일이 존재할 경우 polly로 만들어서 파일을 현재 디렉토리에 생성한 다음, s3에 upload합니다. 
+>![image](https://user-images.githubusercontent.com/45085563/144746356-de7b97d3-fd10-44fc-af16-20c62ebd33a3.png)
+>파일이름을 지정한 다음 실행을 해보았더니, test라는 이름을 가진 mp3파일이 생성되었습니다. 
+>s3로 가서 확인을 해보면 우리가 원하는대로 polly mp3파일이 생성되어 업로드 된 것을 확인할 수 있습니다. 
+>![image](https://user-images.githubusercontent.com/45085563/144746396-766a7819-c982-4282-b8cf-874b688bb0e5.png)
+
