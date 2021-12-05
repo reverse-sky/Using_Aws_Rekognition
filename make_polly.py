@@ -1,4 +1,4 @@
-
+import os
 import boto3
 
 def make_polly(photo, bucket,file_name):
@@ -22,5 +22,6 @@ def make_polly(photo, bucket,file_name):
         file.write(response2['AudioStream'].read())
         file.close()
         mys3 = boto3.client('s3')
-        mys3.upload_file(f'/home/ubuntu/.aws/{file_name}.mp3',bucket,f'file_name'.mp3)
+        pwd = os.getcwd()
+        mys3.upload_file(pwd+f'/{file_name}.mp3',bucket,f'{file_name}.mp3')
         return f"Audio output: {file_name}"
