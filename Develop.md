@@ -1,7 +1,6 @@
 # cloud_computing_final_project  
 -------------
-
->ec2의 ip를 통해서 웹페이지에 접속하여 s3에 사진을 업로드 할 수 있다. 업로드한 사진에 text가 있을 경우 aws rekognition을 이용해서 text를 읽어서 문장을 저장한뒤, 저장한 문장을 aws polly를 사용하여 mp3파일로 생성한다. 
+# 개발일지
 ## 목차
 >### 1. [s3 bucket생성](#1.bucket생성)
 >### 2. [EC2-생성-nginx설치](#2.EC2-생성-nginx설치)
