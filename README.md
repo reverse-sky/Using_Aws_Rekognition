@@ -14,13 +14,13 @@
 <img width="751" alt="image" src="https://user-images.githubusercontent.com/45085563/144748105-b3c80428-fd46-4174-8767-df816b0b12fc.png">
 
 # E.	개발 결과물을 사용하는 방법 소개 (+ 프로그램 구동 화면 스크린 샷 첨부)
->![image](https://user-images.githubusercontent.com/45085563/142407419-6076abca-ce17-4ebe-b8a6-1ecc204ff14a.png)
->+ ec2에 공인 ip를 이용해서 접속할 시 nginx로 구성된 idnex.html홈페이지가 보여지게 된다. 
->+ Create New Album버튼을 클릭하면 s3에 우리가 생성한 이름으로 폴더가 생성된다. 
->![image](https://user-images.githubusercontent.com/45085563/142408671-11f8265d-514f-4b34-b81a-85a823934512.png)
-컴퓨터뿐만 아니라 핸드폰으로도 업로드 할 수 있습니다. 
->>![image](https://user-images.githubusercontent.com/45085563/142409594-f8666e30-7618-466d-8ec3-55b4e3dd2e7e.png) 
->text이미지를 올렸을 때, rekognition을 사용해서 file을 text로 변경한 다음, polly를 사용하여 음성 mp3파일을 생성한 다음 s3버킷에 올립니다.
+>![image](https://user-images.githubusercontent.com/45085563/142407419-6076abca-ce17-4ebe-b8a6-1ecc204ff14a.png)   
+>+ ec2에 공인 ip를 이용해서 접속할 시 nginx로 구성된 idnex.html홈페이지가 보여지게 된다.    
+>+ Create New Album버튼을 클릭하면 s3에 우리가 생성한 이름으로 폴더가 생성된다.    
+>![image](https://user-images.githubusercontent.com/45085563/142408671-11f8265d-514f-4b34-b81a-85a823934512.png)   
+컴퓨터뿐만 아니라 핸드폰으로도 업로드 할 수 있습니다.    
+>>![image](https://user-images.githubusercontent.com/45085563/142409594-f8666e30-7618-466d-8ec3-55b4e3dd2e7e.png)     
+>+ text이미지를 올렸을 때, rekognition을 사용해서 file을 text로 변경한 다음, polly를 사용하여 음성 mp3파일을 생성한 다음 s3버킷에 올립니다.
 >![image](https://user-images.githubusercontent.com/45085563/144748515-4d2de4fb-cd92-4b33-81d1-2b91bab0752e.png)
 >+ test.png파일을 올림 
 >![test](https://user-images.githubusercontent.com/45085563/144748502-a7ca9c7b-5df4-47c9-aab5-3285699ef62b.png)
