@@ -20,10 +20,15 @@
 >![image](https://user-images.githubusercontent.com/45085563/142408671-11f8265d-514f-4b34-b81a-85a823934512.png)
 컴퓨터뿐만 아니라 핸드폰으로도 업로드 할 수 있습니다. 
 >>![image](https://user-images.githubusercontent.com/45085563/142409594-f8666e30-7618-466d-8ec3-55b4e3dd2e7e.png) 
->text이미지를 올렸을 때, rekognition을 사용해서 file을 text로 변경한 다음, polly를 사용하여 음성 mp3파일을 생성한 다음 s3버킷에 올립니다. 
->![image](https://user-images.githubusercontent.com/45085563/144748341-3de8505b-b1ad-4a35-ae03-1ac688574389.png)
->![image](https://user-images.githubusercontent.com/45085563/144746396-766a7819-c982-4282-b8cf-874b688bb0e5.png)
->mp3파일이 생성된 것을 확인할 수 있습니다.
+>text이미지를 올렸을 때, rekognition을 사용해서 file을 text로 변경한 다음, polly를 사용하여 음성 mp3파일을 생성한 다음 s3버킷에 올립니다.
+>![image](https://user-images.githubusercontent.com/45085563/144748515-4d2de4fb-cd92-4b33-81d1-2b91bab0752e.png)
+>+ test.png파일을 올림 
+>![test](https://user-images.githubusercontent.com/45085563/144748502-a7ca9c7b-5df4-47c9-aab5-3285699ef62b.png)
+>+ test.png파일    
+>![image](https://user-images.githubusercontent.com/45085563/144748475-3dec83dd-06e9-4f7d-a905-eaa6ed7693a2.png)
+>+ mp3파일 생성 및 업로드   
+>![image](https://user-images.githubusercontent.com/45085563/144746396-766a7819-c982-4282-b8cf-874b688bb0e5.png)   
+>mp3파일이 생성된 것을 확인할 수 있습니다. 
 
 # F.	개발 결과물의 필요성 및 활용방안
 >전세계의 전체적인 고령화로 디지털 문화를 이용하는 사람들의 평균 연령대가 증가하고 있다. 그러나 고령 사용자의 경우 노화로 인한 여러가지 문제가 존재하는데, 다음 결과물은 고령 사용자의 노화, 특히 노안에 대한 솔루션을 제공할 수 있다. 카카오톡이나 메세지를 통해 이미지를 받더라도, 화질의 문제, 혹은 노안의 문제로 text를 읽는데 어려움이 있는 사용자가 있을 수 있는데, 다음 방식은 별도의 어플리케이션을 설치할 필요 없이 인터넷만 있다면 웹페이지에 접속하여 사진을 업로드 하기만 하면 mp3로 변환하여 사진에 존재하는 text를 읽어주는 방식으로 고령 사용자의 디지털 문화 사용의 편의성을 향상시킬 수 있을 것이다.
